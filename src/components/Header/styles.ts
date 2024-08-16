@@ -23,12 +23,13 @@ export const HeaderContainer = styled.header`
 
             transition: border-bottom 0.2s;
 
-            &:hover {
-                border-bottom: 3px solid ${props => props.theme["green-500"]};
-            }
-
             &.active {
                 color: ${props => props.theme["green-500"]};
+            }
+
+            &:is(:focus, :hover) {
+                box-shadow: none;
+                border-bottom: 3px solid ${props => props.theme["green-500"]};
             }
         }
     }

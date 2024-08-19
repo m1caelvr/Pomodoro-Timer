@@ -32,10 +32,7 @@ type NewCycleFormData = zod.infer<typeof newCycleFormValidationSchema>
 interface Cycle {
     minutesAmount: number;
     interruptDate?: Date;
-<<<<<<< HEAD
     finshedDate?: Date;
-=======
->>>>>>> e517b79e84a55704f5c118d45d1f7970f05a9f51
     startDate: Date;
     task: string;
     id: string;
@@ -113,13 +110,9 @@ export function Home() {
     }
 
     function handleInterruptCycle() {
-<<<<<<< HEAD
-        setCycles((state) =>
-            state.map(cycle => {
-=======
+
         setCycles(
             cycles.map(cycle => {
->>>>>>> e517b79e84a55704f5c118d45d1f7970f05a9f51
                 if (cycle.id === activeCycleId) {
                     return {...cycle, interruptDate: new Date()}
                 } else {

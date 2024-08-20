@@ -46,7 +46,7 @@ export function Home() {
     }
 
     const task = watch('task');
-    const isSubmitDisabled = !task;  
+    const isSubmitDisabled = !task;
 
     return (
         <HomeContainer>

@@ -8,6 +8,13 @@ export const HeaderContainer = styled.header`
     position: absolute;
     width: calc(100% - 2.5rem * 2);
 
+    img {
+        width: 2.7rem;
+        aspect-ratio: 1;
+        object-fit: cover;
+        filter: drop-shadow( 0 4px 5px #050505);
+    }
+
     nav {
         display: flex;
         gap: 6px;

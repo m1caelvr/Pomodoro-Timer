@@ -57,7 +57,9 @@ export function Countdown() {
 
     useEffect(() => {
         if (activeCycle) {
-            document.title = `${minutes}:${secunds}`
+            document.title = `${minutes}:${secunds}`;
+        } else {
+            document.title = 'Pomodoro timer';
         }
     }, [minutes, secunds, activeCycle])
 

@@ -1,7 +1,7 @@
 import { HeaderContainer } from "./styles";
 import { Timer, Scroll } from "@phosphor-icons/react";
 
-import logoIgnite from "../../assets/logo-ignite.svg";
+import logoIgnite from "../../assets/pomodoro-timer.png";
 import { NavLink } from "react-router-dom";
 
 export function Header() {

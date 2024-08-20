@@ -5,7 +5,7 @@ import { CyclesContext } from "../../../../contexts/CycleContext";
 
 export function NewCycleForm() {
     const { activeCycle, cycles } = useContext(CyclesContext)
-    const { register } = useFormContext()    
+    const { register } = useFormContext() 
 
     return (
         <FormContainer>

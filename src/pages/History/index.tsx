@@ -4,54 +4,85 @@ import { useContext } from "react";
 
 import { formatDistanceToNow } from "date-fns";
 import { ptBR } from "date-fns/locale/pt-BR";
+import { Trash } from "@phosphor-icons/react";
 
 export function History() {
-    const { cycles } = useContext(CyclesContext)
+    const { cycles, removeCycle } = useContext(CyclesContext);
 
-    return (
-        <HistoryContainer>
-            <h1>Meu histórico</h1>
+    function removeCycleFromHistory(id: string) {
+        const updatedCycles = cycles.filter(cycle => cycle.id !== id);
+        localStorage.setItem('@pomodoro-timer:cycles-state-1.0.0', JSON.stringify({ cycles: updatedCycles, activeCycleId: null }));
 
-            <HistoryList>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Tarefa</th>
-                            <th>Duração</th>
-                            <th>Início</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {cycles.map(cycle => {
-                            return (
-                                <tr key={cycle.id}>
-                                    <td>{cycle.task}</td>
-                                    <td>{cycle.minutesAmount} minutos</td>
-                                    <td>{formatDistanceToNow(new Date(cycle.startDate), {
-                                        addSuffix: true,
-                                        locale: ptBR,
-                                    })}</td>
-                                    <td>
-                                        { cycle.finshedDate && (
-                                            <Status statusColor="green">Concluído</Status>
-                                        )}
+        removeCycle(id);
+    }
 
-                                        { cycle.interruptDate && (
-                                            <Status statusColor="red">Interrompido</Status>
-                                        )}
+    if (cycles.length !== 0) {
+        return (
+            <HistoryContainer>
+                <h1>Meu histórico</h1>
 
+                <HistoryList>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tarefa</th>
+                                <th>Duração</th>
+                                <th>Início</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {cycles.map(cycle => {
+                                // console.log(cycle.id);
 
-                                        { !cycle.interruptDate && !cycle.finshedDate && (
-                                            <Status statusColor="yellow">Em andamento</Status>
-                                        )}
-                                    </td>
-                                </tr>
-                            )
-                        })}
-                    </tbody>
-                </table>
-            </HistoryList>
-        </HistoryContainer>
-    )
+                                return (
+                                    <tr key={cycle.id}>
+                                        <td>{cycle.task}</td>
+                                        <td>{cycle.minutesAmount} minutos</td>
+                                        <td>{formatDistanceToNow(new Date(cycle.startDate), {
+                                            addSuffix: true,
+                                            locale: ptBR,
+                                        })}</td>
+                                        <td>
+                                            {cycle.finshedDate && (
+                                                <Status color="green">Concluído</Status>
+                                            )}
+
+                                            {cycle.interruptDate && (
+                                                <Status color="red">Interrompido</Status>
+                                            )}
+
+                                            {!cycle.interruptDate && !cycle.finshedDate && (
+                                                <Status color="yellow">Em andamento</Status>
+                                            )}
+                                        </td>
+                                        <td>
+                                            <button 
+                                                type="button"
+                                                onClick={() => removeCycleFromHistory(cycle.id)}
+                                            >
+                                                <Trash size={24} />
+                                            </button>
+                                        </td>
+                                    </tr>
+                                )
+                            })}
+                        </tbody>
+                    </table>
+                </HistoryList>
+            </HistoryContainer>
+        )
+    } else {
+        return (
+            <HistoryContainer>
+                <h1>Meu histórico</h1>
+                <p>
+                    <h2>
+                        Voce ainda não possui nenhum ciclo.
+                    </h2>
+                </p>
+            </HistoryContainer>
+        )
+    }
 }

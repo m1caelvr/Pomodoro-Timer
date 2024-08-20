@@ -55,6 +55,12 @@ export function cyclesReducer(state: CyclesState, action: any) {
             })
         }
 
+        case ActionTypes.REMOVE_CYCLE:
+            return {
+                ...state,
+                cycles: state.cycles.filter(cycle => cycle.id !== action.payload.id),
+            };
+
         default: return state;
     }
 }

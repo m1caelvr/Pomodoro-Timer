@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../styles/device";
 
 export const LayoutContainer = styled.div`
     max-width: 74rem;
@@ -11,4 +12,12 @@ export const LayoutContainer = styled.div`
 
     display: flex;
     flex-direction: column;
+    position: relative;
+
+    @media ${device.mobileM} {
+        max-width: 100vw;
+        margin: 5rem auto;
+        max-height: 100vh;
+        padding: 0;
+    }
 `;

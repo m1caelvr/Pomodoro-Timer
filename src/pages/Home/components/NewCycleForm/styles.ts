@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { device } from "../../../../styles/device";
 
 export const FormContainer = styled.div`
     width: 100%;
@@ -11,6 +12,10 @@ export const FormContainer = styled.div`
     font-size: 1.125rem;
     font-weight: bold;
     flex-wrap: wrap;
+
+    @media ${device.mobileL} {
+        font-size: 150%;
+    }
 `;
 
 const BaseInput = styled.input`

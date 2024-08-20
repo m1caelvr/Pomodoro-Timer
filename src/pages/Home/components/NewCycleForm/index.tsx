@@ -22,12 +22,12 @@ export function NewCycleForm() {
             <datalist id="task-suggestions">
                 {
                     cycles.map(cycle => {
-                        return <option value={cycle.task} />
+                        return <option key={cycle.id} value={cycle.task} />
                     })
                 }
             </datalist>
 
-            <label htmlFor="minutesAmount"></label>
+            <label htmlFor="minutesAmount">por</label>
             <MinutesAmountInput
                 id="minutesAmount"
                 placeholder="00"

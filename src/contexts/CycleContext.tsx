@@ -29,16 +29,21 @@ interface CyclesContextProviderProps {
 export function CyclesContextProvider({
     children,
 }: CyclesContextProviderProps) {
-    const [cyclesState, dispatch] = useReducer(cyclesReducer, {
-            cycles: [],
-            activeCycleId: null,
-        }, () => {
+    const [cyclesState, dispatch] = useReducer(
+        cyclesReducer,
+        { cycles: [], activeCycleId: null, },
+        () => {
             const storedStateAsJSON = localStorage.getItem('@pomodoro-timer:cycles-state-1.0.0');
-
             if (storedStateAsJSON) {
-                console.table(storedStateAsJSON)
-                return JSON.parse(storedStateAsJSON);
+                try {
+                    const parsedState = JSON.parse(storedStateAsJSON);
+                    return parsedState || { cycles: [], activeCycleId: null };
+                } catch (e) {
+                    console.error('Failed to parse stored state:', e);
+                    return { cycles: [], activeCycleId: null };
+                }
             }
+            return { cycles: [], activeCycleId: null };
         }
     )
 

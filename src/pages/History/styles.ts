@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../styles/device";
 
 export const HistoryContainer = styled.main`
     flex: 1;
@@ -8,41 +9,52 @@ export const HistoryContainer = styled.main`
     flex-direction: column;
     overflow: hidden;
 
+    margin-top: 4rem;
+
     h1 {
         font-size: 1.5rem;
         color: ${props => props.theme["gray-100"]};
     }
 
-    > p h2 {
+    h2 {
         opacity: .7;
-        font-size: 1rem;
-        margin-top: 4px;
+        font-size: .9rem;
+        margin-top: 5px;
         font-style: italic;
+        font-weight: 500;
+    }
+
+    @media ${device.mobileM} {
+        padding: 4rem 0;
     }
 `;
 
+export var tableFontSize = '1.125rem';
+
 export const HistoryList = styled.div`
     flex: 1;
-    overflow: hidden auto;
+    overflow: auto;
     margin-top: 2rem;
     border-radius: 8px;
 
-    table { 
+    table {
         width: 100%;
         border-collapse: collapse;
         min-width: 600px;
 
+        * { text-overflow: ellipsis; }
+
         th {
             background: ${props => props.theme["gray-600"]};
             padding: 1rem 1.5rem;
-            font-size: 0.875rem;
+            font-size: ${tableFontSize};
             line-height: 1.6;
             text-align: left;
             color: ${props => props.theme["gray-100"]};
             
             &:first-child {
                 border-top-left-radius: 8px;
-            }  
+            }
 
             &:last-child {
                 border-top-right-radius: 8px;
@@ -52,18 +64,15 @@ export const HistoryList = styled.div`
         td {
             background: ${props => props.theme["gray-700"]};
             padding: 1rem 1.5rem;
-            font-size: 0.875rem;
+            font-size: ${tableFontSize};
             line-height: 1.6;
             border-top: 4px solid ${props => props.theme["gray-800"]};
             
             &:first-child {
                 width: 40%;
-                /* padding-left: 1.5rem; */
             }
 
-            &:last-child {
-                /* padding-right: 1.5rem; */
-            }
+            &, * { white-space: nowrap; }
 
             button {
                 width: 3rem;

@@ -1,13 +1,16 @@
 import styled from "styled-components";
+import { device } from "../../styles/device";
 
 export const HeaderContainer = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: absolute;
+    width: calc(100% - 2.5rem * 2);
 
-    nav {    
+    nav {
         display: flex;
-        gap: .5rem;
+        gap: 6px;
 
         a {
             width: 3rem;
@@ -32,5 +35,9 @@ export const HeaderContainer = styled.header`
                 border-bottom: 3px solid ${props => props.theme["green-500"]};
             }
         }
+    }
+
+    @media ${device.mobileM} {
+        width: 100%;
     }
 `;

@@ -20,7 +20,6 @@ export function History() {
         return (
             <HistoryContainer>
                 <h1>Meu histórico</h1>
-
                 <HistoryList>
                     <table>
                         <thead>
@@ -77,11 +76,9 @@ export function History() {
         return (
             <HistoryContainer>
                 <h1>Meu histórico</h1>
-                <p>
-                    <h2>
-                        Voce ainda não possui nenhum ciclo.
-                    </h2>
-                </p>
+                <h2>
+                    Voce ainda não possui nenhum ciclo.
+                </h2>
             </HistoryContainer>
         )
     }

@@ -3,13 +3,13 @@ import { device } from "../../styles/device";
 
 export const HistoryContainer = styled.main`
     flex: 1;
-    padding: 3.5rem;
+    padding: 3rem .9rem;
 
     display: flex;
-    flex-direction: column;
     overflow: hidden;
+    flex-direction: column;
 
-    margin-top: 4rem;
+    margin-top: 3rem;
 
     h1 {
         font-size: 1.5rem;
@@ -18,10 +18,10 @@ export const HistoryContainer = styled.main`
 
     h2 {
         opacity: .7;
-        font-size: .9rem;
         margin-top: 5px;
-        font-style: italic;
+        font-size: .9rem;
         font-weight: 500;
+        font-style: italic;
     }
 
     @media ${device.mobileM} {

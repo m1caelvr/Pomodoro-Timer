@@ -9,7 +9,7 @@ export const HeaderContainer = styled.header`
     width: calc(100% - 2.5rem * 2);
 
     img {
-        width: 2.7rem;
+        width: 40px;
         aspect-ratio: 1;
         object-fit: cover;
         filter: drop-shadow( 0 4px 5px #050505);
@@ -20,8 +20,8 @@ export const HeaderContainer = styled.header`
         gap: 6px;
 
         a {
-            width: 3rem;
-            height: 3rem;
+            width: 45px;
+            height: 45px;
             display: flex;
             justify-content: center;
             align-items: center;

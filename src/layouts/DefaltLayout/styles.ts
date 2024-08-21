@@ -16,7 +16,7 @@ export const LayoutContainer = styled.div`
 
     @media ${device.mobileM} {
         max-width: 100vw;
-        margin: 5rem auto;
+        margin: 2.8rem auto;
         max-height: 100vh;
         padding: 0;
     }

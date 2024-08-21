@@ -1,50 +1,31 @@
-# React + TypeScript + Vite
+# Pomodoro Timer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Sobre o Projeto
 
-Currently, two official plugins are available:
+O **Pomodoro Timer** é um aplicativo web desenvolvido com React e TypeScript, projetado para ajudar na gestão de tempo utilizando a técnica Pomodoro. Ele é totalmente responsivo e inclui funcionalidades que proporcionam uma experiência de usuário fluida e eficiente.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funcionalidades
 
-## Expanding the ESLint configuration
+- **Histórico de Timers:** O histórico dos ciclos é armazenado no Local Storage, garantindo a continuidade dos mesmos após a atualização da página.
+- **Continuidade Automática:** Se a página for recarregada enquanto um ciclo está ativo, o timer continua funcionando sem interrupções.
+- **Tempo no Título:** O tempo restante do ciclo é exibido no título da aba do navegador, permitindo que o usuário monitore o progresso de forma discreta.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Tecnologias Utilizadas
 
-- Configure the top-level `parserOptions` property like this:
+- **Frontend:** React, TypeScript, CSS
+- **Armazenamento:** Local Storage
+- **Gerenciamento de Estado:** Redux
+- **Estilização:** Styled Components
+- **Outras Bibliotecas:** React Router
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Deploy
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+O projeto está disponível online e pode ser acessado em: [Pomodoro Timer - Vercel](https://pomodoro-ltda.vercel.app)
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Contato
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Se tiver alguma dúvida ou sugestão, sinta-se à vontade para entrar em contato:
+
+- **Nome:** Micael Vitor
+- **Email:** micael.vitor222@gmail.com
+- **LinkedIn:** [Micael Rodrigues](https://www.linkedin.com/in/micael-rodrigues-silva/)

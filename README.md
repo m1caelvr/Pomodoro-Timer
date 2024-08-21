@@ -26,6 +26,6 @@ O projeto está disponível online e pode ser acessado em: [Pomodoro Timer - Ver
 
 Se tiver alguma dúvida ou sugestão, sinta-se à vontade para entrar em contato:
 
-- **Nome:** Micael Vitor
+- **Nome:** Micael Rodrigues
 - **Email:** micael.vitor222@gmail.com
-- **LinkedIn:** [Micael Rodrigues](https://www.linkedin.com/in/micael-rodrigues-silva/)
+- **LinkedIn:** [linkedin.com/in/micael-rodrigues-silva](https://www.linkedin.com/in/micael-rodrigues-silva/)

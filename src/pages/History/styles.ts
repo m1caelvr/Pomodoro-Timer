@@ -3,7 +3,7 @@ import { device } from "../../styles/device";
 
 export const HistoryContainer = styled.main`
     flex: 1;
-    padding: 3rem .9rem;
+    padding: 3rem 1rem;
 
     display: flex;
     overflow: hidden;
@@ -25,7 +25,7 @@ export const HistoryContainer = styled.main`
     }
 
     @media ${device.mobileM} {
-        padding: 4rem 0;
+        padding: 4rem 1rem;
     }
 `;
 
